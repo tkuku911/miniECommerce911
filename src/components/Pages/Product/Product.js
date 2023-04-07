@@ -1,9 +1,9 @@
 import productImage from '../../../assets/images/product.jpeg';
 import Image from '../../UI/Image/Image';
-import AddToCart from '../Blocks/AddToCart/AddToCart';
-import Banner from '../Blocks/Banner/Banner';
+import AddToCart from '../../Layout/Cart/AddToCart/AddToCart';
+import Banner from '../../Layout/Banner/Banner';
 import { Fragment, useEffect, useState } from 'react';
-import CardInfo from '../Blocks/CardInfo/CardInfo';
+import CardInfo from '../../Layout/Card/CardInfo/CardInfo';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 

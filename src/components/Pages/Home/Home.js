@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import Banner from '../Blocks/Banner/Banner';
+import Banner from '../../Layout/Banner/Banner';
 import List from './List/List';
 
 const Home = () => {

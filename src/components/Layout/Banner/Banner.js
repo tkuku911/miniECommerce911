@@ -1,4 +1,4 @@
-import imageHills from '../../../../assets/images/hills.jpg';
+import imageHills from '../../../assets/images/hills.jpg';
 
 const Banner = () => {
     return(

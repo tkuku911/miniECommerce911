@@ -1,8 +1,8 @@
 import Image from '../../../../UI/Image/Image';
 import productImage from '../../../../../assets/images/product.jpeg';
-import AddToCart from '../../../Blocks/AddToCart/AddToCart';
+import AddToCart from '../../../../Layout/Cart/AddToCart/AddToCart';
 import { Link } from 'react-router-dom';
-import CardInfo from '../../../Blocks/CardInfo/CardInfo';
+import CardInfo from '../../../../Layout/Card/CardInfo/CardInfo';
 
 const Card = (props) => {
     const link = `/product/${props.id}`;
