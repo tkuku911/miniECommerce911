@@ -1,0 +1,63 @@
+import { createSlice } from '@reduxjs/toolkit';
+
+const cartSlice = createSlice({
+    name: 'cart',
+    initialState: {
+        items: [],
+        totalQuantity: 0,
+        totalPrice: 0,
+    },
+    reducers: {
+        addItemToCart(state, action) {
+            const newItem = action.payload;
+            const existingItem = state.items.find((item) => item.id === newItem.id);
+            state.totalQuantity++;
+            if (!existingItem) {
+                state.items.push({
+                    id: newItem.id,
+                    price: newItem.price,
+                    qty: newItem.qty,
+                    totalPrice: newItem.price,
+                    title: newItem.title
+                });
+            } else {
+                existingItem.qty++;
+                existingItem.totalPrice = existingItem.totalPrice + newItem.price;
+            }
+            state.totalPrice += newItem.price;
+        },
+        minusItemQty(state, action) {
+            const id = action.payload;
+            const existingItem = state.items.find(item => item.id === id);
+            state.totalQuantity--;
+            if (existingItem.qty === 1) {
+                state.items = state.items.filter(item => item.id !== id);
+            } else {
+                existingItem.qty--;
+            }
+            state.totalPrice -= existingItem.price;
+        },
+        plusItemQty(state, action) {
+            const id = action.payload;
+            const existingItem = state.items.find(item => item.id === id);
+            state.totalQuantity++;
+            existingItem.qty++;
+            state.totalPrice += existingItem.price;
+        },
+        removeItemFromCart(state, action) {
+            const id = action.payload;
+            const existingItem = state.items.find(item => item.id === id);
+            state.totalQuantity--;
+            if (existingItem.qty === 1) {
+                state.items = state.items.filter(item => item.id !== id);
+            } else {
+                existingItem.qty--;
+            }
+            state.totalPrice -= existingItem.price;
+        },
+    },
+});
+
+export const cartActions = cartSlice.actions;
+
+export default cartSlice;
