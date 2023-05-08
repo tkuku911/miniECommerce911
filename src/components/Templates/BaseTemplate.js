@@ -3,16 +3,18 @@ import Header from '../Layout/Header/Header';
 import { useSelector } from 'react-redux';
 import React, { Fragment } from 'react';
 import CartModal from '../Layout/Cart/CartModal/CartModal';
+import Footer from '../Layout/Footer/Footer';
 
 function BaseTemplate() {
     const cartIsVisible = useSelector((state) => state.ui.cartIsVisible);
 
     return (
         <Fragment>
-             <div className={'px-32 min-h-screen'}>
+             <div className={'min-h-screen'}>
                  {cartIsVisible && <CartModal />}
                  <Header />
                  <Outlet />
+                 <Footer />
              </div>
          </Fragment>
     );

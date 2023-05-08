@@ -2,7 +2,7 @@ import CartItem from '../CartItem/CartItem';
 import { useSelector } from 'react-redux';
 import { Fragment } from 'react';
 
-const Cart = (props) => {
+const Cart = () => {
     const cartQuantity = useSelector((state) => state.cart.totalQuantity);
     const cartItems = useSelector((state) => state.cart.items);
     const totalPrice = useSelector((state) => state.cart.totalPrice);

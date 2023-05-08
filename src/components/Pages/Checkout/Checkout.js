@@ -1,12 +1,13 @@
-import { Fragment } from 'react';
 import Cart from '../../Layout/Cart/Cart/Cart';
+import CheckoutForm from './CheckoutForm/CheckoutForm';
 
 const Checkout = () => {
     return(
-        <Fragment>
-            <h1>Checkout</h1>
+        <div className={'px-64'}>
+            <h1 className={'text-center text-2xl font-black mb-5'}>Checkout</h1>
             <Cart />
-        </Fragment>
+            <CheckoutForm />
+        </div>
     )
 }
 

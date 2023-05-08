@@ -1,10 +1,30 @@
-import Button from '../../../UI/Button/Button';
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import Button from '../../../UI/Button/Button';
 import { cartActions } from '../../../../store/Cart/cart-slice';
+import { uiActions } from '../../../../store/UI/ui-slice';
 
-const CartItem = (props) => {
+interface Item {
+    id: string;
+    title: string;
+    description: string;
+    price: number;
+    qty: number;
+}
+
+interface ICartItemProps {
+    item: Item;
+}
+
+const CartItem: FC<ICartItemProps> = ({item}) => {
     const dispatch = useDispatch();
-    const {id, title, qty, price} = props.item;
+    const {id, title, qty, price} = item;
+    const link = `/product/${item.id}`;
+
+    const toggleCartHandler = () => {
+        dispatch(uiActions.toggle());
+    };
 
     const removeFromCart = () => {
         dispatch(cartActions.removeItemFromCart(id));
@@ -20,7 +40,9 @@ const CartItem = (props) => {
 
     return(
         <div className={'flex flex-row justify-around mb-4'}>
-            <h3>Name: {title}</h3>
+            <Link to={link} className={'list'} onClick={toggleCartHandler}>
+                <h3>Name: {title}</h3>
+            </Link>
             <p>QTY: {qty}</p>
             <p>Price: {price} $</p>
             <Button
