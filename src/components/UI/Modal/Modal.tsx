@@ -1,4 +1,4 @@
-import {FC, Fragment, JSXElementConstructor, ReactElement} from 'react';
+import { FC, JSXElementConstructor, ReactElement } from 'react';
 import ReactDOM from 'react-dom';
 
 export interface IBackdropProps {
@@ -30,13 +30,13 @@ const portalElement: Element | DocumentFragment = document.getElementById('overl
 
 const Modal: FC<IModalProps> = ({onClose, children}) => {
     return (
-        <Fragment>
+        <>
             {ReactDOM.createPortal(<Backdrop onClose={onClose} />, portalElement)}
             {ReactDOM.createPortal(
                 <ModalOverlay>{children}</ModalOverlay>,
                 portalElement
             )}
-        </Fragment>
+        </>
     );
 };
 

@@ -39,30 +39,38 @@ const CartItem: FC<ICartItemProps> = ({item}) => {
     };
 
     return(
-        <div className={'flex flex-row justify-around mb-4'}>
-            <Link to={link} className={'list'} onClick={toggleCartHandler}>
-                <h3>Name: {title}</h3>
-            </Link>
-            <p>QTY: {qty}</p>
-            <p>Price: {price} $</p>
-            <Button
-                classes={'border-2 border-indigo-600 w-10 h-7 mt-1' + (qty < 2 ? ' disabled:opacity-25' : '')}
-                onClick={minusItem}
-                disabled={qty < 2}
-                value={'-'}>
-            </Button>
-            <Button
-                classes={'border-2 border-indigo-600 w-10 h-7 mt-1' + (qty > 9 ? ' disabled:opacity-25' : '')}
-                onClick={plusItem}
-                disabled={qty > 9}
-                value={'+'}>
-            </Button>
-            <Button
-                classes={'border-2 border-indigo-600 w-20 h-7 mt-1'}
-                onClick={removeFromCart}
-                value={'Remove'}>
-            </Button>
-        </div>
+        <li className={'flex flex-row justify-start mb-2'}>
+            <div className={'w-[40%]'}>
+                <Link to={link} className={'list'} onClick={toggleCartHandler}>
+                    <h3>Name: {title}</h3>
+                </Link>
+            </div>
+            <div className={'w-[10%]'}>
+                <p>QTY: {qty}</p>
+            </div>
+            <div className={'w-[15%]'}>
+                <p>Price: {price} $</p>
+            </div>
+            <div className={'w-[35%]'}>
+                <Button
+                    classes={'border-2 border-indigo-600 w-8 h-7 mr-4' + (qty < 2 ? ' disabled:opacity-25' : '')}
+                    onClick={minusItem}
+                    disabled={qty < 2}
+                    value={'-'}>
+                </Button>
+                <Button
+                    classes={'border-2 border-indigo-600 w-8 h-7 mr-10' + (qty > 9 ? ' disabled:opacity-25' : '')}
+                    onClick={plusItem}
+                    disabled={qty > 9}
+                    value={'+'}>
+                </Button>
+                <Button
+                    classes={'border-2 border-indigo-600 w-20 h-7'}
+                    onClick={removeFromCart}
+                    value={'Remove'}>
+                </Button>
+            </div>
+        </li>
     )
 }
 

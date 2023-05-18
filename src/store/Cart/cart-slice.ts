@@ -26,14 +26,14 @@ const cartSlice = createSlice({
                 price: newItem.price,
                 description: newItem.description,
                 qty: newItem.qty,
-                totalPrice: newItem.price,
+                totalItemPrice: newItem.price,
                 title: newItem.title
             };
             if (!existingItem) {
                 state.items.push(product);
             } else {
                 existingItem.qty++;
-                existingItem.totalPrice = existingItem.totalPrice + newItem.price;
+                existingItem.totalItemPrice = existingItem.totalItemPrice + newItem.price;
             }
             state.totalPrice += newItem.price;
         },

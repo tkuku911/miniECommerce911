@@ -1,4 +1,3 @@
-import { Fragment } from 'react';
 import { useForm } from "react-hook-form";
 
 const CheckoutForm = () => {
@@ -13,7 +12,8 @@ const CheckoutForm = () => {
     };
 
     return(
-        <Fragment>
+        <div className={'mb-10'}>
+            <h3 className={'text-left font-bold text-2xl mb-6'}>Checkout Form</h3>
             <form onSubmit={handleSubmit(onSubmit)} className={'flex flex-col gap-5'}>
                 <input {...register("name", { required: true })} className={'border-2 h-10'} />
                 {errors.name && <span className={'-mt-4 text-rose-600'}>This field is required name</span>}
@@ -32,7 +32,7 @@ const CheckoutForm = () => {
 
                 <input type="submit" className={'border-2 bg-slate-500 py-3 w-72'} />
             </form>
-        </Fragment>
+        </div>
     )
 }
 

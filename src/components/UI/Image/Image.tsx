@@ -1,4 +1,4 @@
-import { FC, Fragment } from 'react';
+import { FC } from 'react';
 
 export interface IImageProps {
     classes: string;
@@ -8,9 +8,9 @@ export interface IImageProps {
 
 const Image: FC<IImageProps> = ({classes, src, alt}) => {
     return(
-        <Fragment>
+        <>
             <img src={src} alt={alt} className={classes} />
-        </Fragment>
+        </>
     )
 }
 

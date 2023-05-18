@@ -1,4 +1,4 @@
-import { FC, Fragment } from 'react';
+import { FC } from 'react';
 import { Product } from '../../../../interfaces/product';
 
 interface ICardInfoProps {
@@ -9,9 +9,9 @@ interface ICardInfoProps {
 const CardInfo: FC<ICardInfoProps> = ({displayDescription, item}) => {
 
     const descriptionBlock = (
-        <Fragment>
+        <>
             {displayDescription ? (<p className={'mb-3'}>{item?.description}</p>) : ''}
-        </Fragment>
+        </>
     );
 
     return(

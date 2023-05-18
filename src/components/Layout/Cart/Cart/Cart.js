@@ -1,6 +1,5 @@
 import CartItem from '../CartItem/CartItem';
 import { useSelector } from 'react-redux';
-import { Fragment } from 'react';
 
 const Cart = () => {
     const cartQuantity = useSelector((state) => state.cart.totalQuantity);
@@ -21,7 +20,7 @@ const Cart = () => {
     const cartData = (
         <div>
             {cartItemsBlock}
-            <div className={'mt-6'}>Total Amount - {totalPrice} $</div>
+            <div className={'mt-6 font-bold'}>Total Amount - {totalPrice} $</div>
         </div>
     )
 
@@ -32,12 +31,12 @@ const Cart = () => {
     )
 
     return(
-        <Fragment>
-            <h3 className={'text-center font-bold text-2xl mb-2'}>Cart</h3>
+        <div className={'mb-12'}>
+            <h3 className={'text-left font-bold text-2xl mb-6'}>Cart</h3>
             <div className='h-5/6'>
                 {cartQuantity ? cartData : cartDataEmpty}
             </div>
-        </Fragment>
+        </div>
     )
 }
 

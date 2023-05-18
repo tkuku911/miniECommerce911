@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import productImage from '../../../assets/images/phone.png';
@@ -19,7 +19,7 @@ const Product = () => {
     }, [id, productItems]);
 
     return(
-        <Fragment>
+        <>
             <div className={'mt-10 mb-10 flex px-64'}>
                 <Image src={productImage} alt={'Card image'} classes={'h-96'} />
                 <div className={'ml-60'}>
@@ -28,7 +28,7 @@ const Product = () => {
                 </div>
             </div>
             <Banner />
-        </Fragment>
+        </>
     )
 }
 

@@ -1,4 +1,4 @@
-import { FC, Fragment } from 'react';
+import { FC } from 'react';
 import Button from '../../../UI/Button/Button';
 import { useDispatch } from 'react-redux';
 import { cartActions } from "../../../../store/Cart/cart-slice";
@@ -23,9 +23,9 @@ const AddToCart: FC<IAddToCartProps> = ({item}) => {
     };
 
     return(
-        <Fragment>
+        <>
             <Button onClick={addToCart} value={'Add'} classes={'border-2 rounded-lg border-purple-400 text-purple-400 w-20 h-10 mt-1'}  />
-        </Fragment>
+        </>
     )
 }
 
