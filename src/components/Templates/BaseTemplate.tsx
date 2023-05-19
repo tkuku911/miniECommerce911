@@ -1,18 +1,24 @@
 import { Outlet } from 'react-router-dom';
 import Header from '../Layout/Header/Header';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import CartModal from '../Layout/Cart/CartModal/CartModal';
 import Footer from '../Layout/Footer/Footer';
 import useScrollTop from "../../hooks/use-scroll-top";
+import { uiActions } from '../../store/UI/ui-slice';
 
 function BaseTemplate() {
-    const cartIsVisible = useSelector((state) => state.ui.cartIsVisible);
+    const dispatch = useDispatch();
+    const cartIsVisible = useSelector((state:any) => state.ui.cartIsVisible);
+
+    const toggleCartHandler = () => {
+        dispatch(uiActions.toggle());
+    };
     useScrollTop();
 
     return (
         <>
              <div className={'min-h-screen'}>
-                 {cartIsVisible && <CartModal />}
+                 {cartIsVisible && <CartModal onClose={toggleCartHandler} />}
                  <Header />
                  <Outlet />
                  <Footer />

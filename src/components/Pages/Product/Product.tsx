@@ -7,6 +7,7 @@ import AddToCart from '../../Layout/Cart/AddToCart/AddToCart';
 import Banner from '../../Layout/Banner/Banner';
 import CardInfo from '../../Layout/Card/CardInfo/CardInfo';
 import { Product as IProduct } from '../../../interfaces/product';
+import TitleBlock from '../../Layout/TitleBlock/TitleBlock';
 
 const Product = () => {
     let { id } = useParams();
@@ -20,10 +21,11 @@ const Product = () => {
 
     return(
         <>
+            <TitleBlock title={product?.title} />
             <div className={'mt-10 mb-10 flex px-64'}>
                 <Image src={productImage} alt={'Card image'} classes={'h-96'} />
                 <div className={'ml-60'}>
-                    <CardInfo item={product} displayDescription={true} />
+                    <CardInfo item={product} displayTitle={false} displayDescription={true} />
                     <AddToCart item={product} />
                 </div>
             </div>

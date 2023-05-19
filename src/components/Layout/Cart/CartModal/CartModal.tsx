@@ -5,6 +5,7 @@ import Modal from '../../../UI/Modal/Modal';
 import Cart from '../Cart/Cart';
 import Button from '../../../UI/Button/Button';
 import { uiActions } from '../../../../store/UI/ui-slice';
+import { CartLocations } from '../../../../enums/cart-locations.enum';
 
 interface ICartModalProps {
     onClose: () => void;
@@ -22,7 +23,7 @@ const CartModal: FC<ICartModalProps> = ({onClose}) => {
     return(
         <Modal onClose={onClose}>
             <div className={'flex flex-col h-full'}>
-                <Cart />
+                <Cart type={CartLocations.CartModal}/>
                 <div className=''>
                     <Button
                         classes={'border border-slate-400 rounded p-2 mr-2'}

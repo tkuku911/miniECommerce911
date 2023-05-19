@@ -1,17 +1,24 @@
 import CartItem from '../CartItem/CartItem';
 import { useSelector } from 'react-redux';
+import { FC } from 'react';
+import { Product } from '../../../../interfaces/product';
 
-const Cart = () => {
-    const cartQuantity = useSelector((state) => state.cart.totalQuantity);
-    const cartItems = useSelector((state) => state.cart.items);
-    const totalPrice = useSelector((state) => state.cart.totalPrice);
+interface ICartProps {
+    type: string;
+}
+
+const Cart: FC<ICartProps> = ({type}) => {
+    const cartQuantity = useSelector((state: any) => state.cart.totalQuantity);
+    const cartItems = useSelector((state: any) => state.cart.items);
+    const totalPrice = useSelector((state: any) => state.cart.totalPrice);
 
     const cartItemsBlock = (
         <ul className={''}>
-            {cartItems.map((item) => (
+            {cartItems.map((item: Product) => (
                 <CartItem
                     key={item.id}
                     item={item}
+                    type={type}
                 />
             ))}
         </ul>

@@ -18,7 +18,7 @@ const Card: FC<ICardProps> = ({item}) => {
             <Link to={link} className={'list'}>
                 <Image src={productImage} alt={'Card image'} classes={'h-50'} />
                 <div className={'flex justify-around'}>
-                    <CardInfo item={item} displayDescription={false} />
+                    <CardInfo item={item} displayTitle={true} displayDescription={false} />
                     <AddToCart
                         item={item}
                     />

@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import Button from '../../../UI/Button/Button';
 import { cartActions } from '../../../../store/Cart/cart-slice';
 import { uiActions } from '../../../../store/UI/ui-slice';
+import { CartLocations } from '../../../../enums/cart-locations.enum';
 
 interface Item {
     id: string;
@@ -15,15 +16,18 @@ interface Item {
 
 interface ICartItemProps {
     item: Item;
+    type: string;
 }
 
-const CartItem: FC<ICartItemProps> = ({item}) => {
+const CartItem: FC<ICartItemProps> = ({item, type}) => {
     const dispatch = useDispatch();
     const {id, title, qty, price} = item;
     const link = `/product/${item.id}`;
 
     const toggleCartHandler = () => {
-        dispatch(uiActions.toggle());
+        if (type === CartLocations.CartModal) {
+            dispatch(uiActions.toggle());
+        }
     };
 
     const removeFromCart = () => {
