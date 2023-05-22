@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import { Product } from '../../../../interfaces/product';
+import { ProductInterface } from '../../../../interfaces/product.interface';
 
 interface ICardInfoProps {
     displayDescription: boolean;
     displayTitle: boolean;
-    item: Product | null;
+    item: ProductInterface | null;
 }
 
 const CardInfo: FC<ICardInfoProps> = ({displayDescription, displayTitle, item}) => {

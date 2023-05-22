@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { Product } from '../../interfaces/product';
+import { ProductInterface } from '../../interfaces/product.interface';
 
 interface ICartSlice {
-    items: Product[],
+    items: ProductInterface[],
     totalQuantity: number,
     totalPrice: number,
 }
@@ -19,9 +19,9 @@ const cartSlice = createSlice({
     reducers: {
         addItemToCart(state, action) {
             const newItem = action.payload;
-            const existingItem: Product | undefined = state.items.find((item: Product) => item.id === newItem.id);
+            const existingItem: ProductInterface | undefined = state.items.find((item: ProductInterface) => item.id === newItem.id);
             state.totalQuantity++;
-            const product: Product = {
+            const product: ProductInterface = {
                 id: newItem.id,
                 price: newItem.price,
                 description: newItem.description,
@@ -39,11 +39,11 @@ const cartSlice = createSlice({
         },
         minusItemQty(state, action) {
             const id = action.payload;
-            const existingItem: Product | undefined = state.items.find((item: Product) => item.id === id);
+            const existingItem: ProductInterface | undefined = state.items.find((item: ProductInterface) => item.id === id);
             if (existingItem) {
                 state.totalQuantity--;
                 if (existingItem?.qty === 1) {
-                    state.items = state.items.filter((item: Product) => item.id !== id);
+                    state.items = state.items.filter((item: ProductInterface) => item.id !== id);
                 } else {
                     existingItem.qty--;
                 }
@@ -52,7 +52,7 @@ const cartSlice = createSlice({
         },
         plusItemQty(state, action) {
             const id = action.payload;
-            const existingItem: Product | undefined = state.items.find((item: Product) => item.id === id);
+            const existingItem: ProductInterface | undefined = state.items.find((item: ProductInterface) => item.id === id);
             if (existingItem) {
                 state.totalQuantity++;
                 existingItem.qty++;
@@ -61,10 +61,10 @@ const cartSlice = createSlice({
         },
         removeItemFromCart(state, action) {
             const id = action.payload;
-            const existingItem: Product | undefined = state.items.find((item: Product) => item.id === id);
+            const existingItem: ProductInterface | undefined = state.items.find((item: ProductInterface) => item.id === id);
             if (existingItem) {
                 state.totalQuantity -= existingItem.qty;
-                state.items = state.items.filter((item: Product) => item.id !== id);
+                state.items = state.items.filter((item: ProductInterface) => item.id !== id);
                 state.totalPrice -= existingItem.price * existingItem.qty;
             }
         },

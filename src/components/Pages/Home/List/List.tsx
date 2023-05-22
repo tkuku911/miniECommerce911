@@ -1,13 +1,13 @@
 import Card from './Card/Card';
 import { useSelector } from 'react-redux';
-import { Product } from '../../../../interfaces/product';
+import { ProductInterface } from '../../../../interfaces/product.interface';
 
 const List = () => {
-    const productItems: Product[] = useSelector((state: any) => state.products.products);
+    const productItems: ProductInterface[] = useSelector((state: any) => state.products.products);
 
     const products = (
         <ul className={'grid grid-rows-2 grid-flow-col gap-16 px-64'}>
-            {productItems.map((item: Product) => (
+            {productItems.map((item: ProductInterface) => (
                 <Card
                     key={item.id}
                     item={item}

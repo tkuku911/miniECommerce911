@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { Product } from '../../interfaces/product';
+import { ProductInterface } from '../../interfaces/product.interface';
 
-const PRODUCTS: Product[] = [
+const PRODUCTS: ProductInterface[] = [
     {
         id: '1',
         title: 'Iphone 3g',

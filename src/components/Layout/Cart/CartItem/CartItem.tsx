@@ -57,18 +57,21 @@ const CartItem: FC<ICartItemProps> = ({item, type}) => {
             </div>
             <div className={'w-[35%]'}>
                 <Button
+                    type={'button'}
                     classes={'border-2 border-indigo-600 w-8 h-7 mr-4' + (qty < 2 ? ' disabled:opacity-25' : '')}
                     onClick={minusItem}
                     disabled={qty < 2}
                     value={'-'}>
                 </Button>
                 <Button
+                    type={'button'}
                     classes={'border-2 border-indigo-600 w-8 h-7 mr-10' + (qty > 9 ? ' disabled:opacity-25' : '')}
                     onClick={plusItem}
                     disabled={qty > 9}
                     value={'+'}>
                 </Button>
                 <Button
+                    type={'button'}
                     classes={'border-2 border-indigo-600 w-20 h-7'}
                     onClick={removeFromCart}
                     value={'Remove'}>

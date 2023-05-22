@@ -1,7 +1,7 @@
 import CartItem from '../CartItem/CartItem';
 import { useSelector } from 'react-redux';
 import { FC } from 'react';
-import { Product } from '../../../../interfaces/product';
+import { ProductInterface } from '../../../../interfaces/product.interface';
 
 interface ICartProps {
     type: string;
@@ -14,7 +14,7 @@ const Cart: FC<ICartProps> = ({type}) => {
 
     const cartItemsBlock = (
         <ul className={''}>
-            {cartItems.map((item: Product) => (
+            {cartItems.map((item: ProductInterface) => (
                 <CartItem
                     key={item.id}
                     item={item}

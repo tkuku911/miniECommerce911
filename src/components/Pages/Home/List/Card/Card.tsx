@@ -4,10 +4,10 @@ import Image from '../../../../UI/Image/Image';
 import productImage from '../../../../../assets/images/product.jpeg';
 import AddToCart from '../../../../Layout/Cart/AddToCart/AddToCart';
 import CardInfo from '../../../../Layout/Card/CardInfo/CardInfo';
-import { Product } from '../../../../../interfaces/product';
+import { ProductInterface } from '../../../../../interfaces/product.interface';
 
 interface ICardProps {
-    item: Product;
+    item: ProductInterface;
 }
 
 const Card: FC<ICardProps> = ({item}) => {

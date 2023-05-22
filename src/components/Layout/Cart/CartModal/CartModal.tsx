@@ -26,12 +26,14 @@ const CartModal: FC<ICartModalProps> = ({onClose}) => {
                 <Cart type={CartLocations.CartModal}/>
                 <div className=''>
                     <Button
+                        type={'button'}
                         classes={'border border-slate-400 rounded p-2 mr-2'}
                         onClick={toggleCartHandler}
                         value={'Close'}>
                     </Button>
                     <Link to={linkToOrder} onClick={toggleCartHandler}>
                         <Button
+                            type={'button'}
                             classes={'border border-slate-400 rounded p-2' + (!cartQuantity ? ' disabled:opacity-25' : '')}
                             value={'Order'}
                             disabled={!cartQuantity}>
