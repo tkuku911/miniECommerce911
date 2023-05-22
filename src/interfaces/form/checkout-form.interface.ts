@@ -1,10 +1,10 @@
-import { FormParent } from './parent-form.interface';
+import { FormParentInterface } from './parent-form.interface';
 
 
-export interface CheckoutFormValues extends FormParent {
+export interface CheckoutFormValuesInterface extends FormParentInterface {
     firstName: string;
     lastName: string;
-    /*email: string;
+    email: string;
     phone: string;
-    address: string;*/
+    address: string;
 }

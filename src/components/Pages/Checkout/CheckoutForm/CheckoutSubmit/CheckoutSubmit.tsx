@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Button from '../../../../UI/Button/Button';
 import { useFormikContext } from 'formik';
-import { CheckoutFormValues } from '../../../../../interfaces/form/checkout-form.interface';
+import { CheckoutFormValuesInterface } from '../../../../../interfaces/form/checkout-form.interface';
 
 export interface IButtonProps {
     type: 'button' | 'submit' | 'reset';
@@ -11,7 +11,7 @@ export interface IButtonProps {
 };
 
 const CheckoutSubmit: FC<IButtonProps> = ({type, classes, onClick, value}) => {
-    const { isValid, dirty } = useFormikContext<CheckoutFormValues>();
+    const { isValid, dirty } = useFormikContext<CheckoutFormValuesInterface>();
     const disabled = !isValid || !dirty;
 
     return(

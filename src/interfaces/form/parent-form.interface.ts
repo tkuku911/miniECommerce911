@@ -1,3 +1,3 @@
-export interface FormParent {
+export interface FormParentInterface {
 
 }
