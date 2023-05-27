@@ -1,7 +1,7 @@
 import CartItem from '../CartItem/CartItem';
 import { useSelector } from 'react-redux';
 import { FC } from 'react';
-import { ProductInterface } from '../../../../interfaces/product.interface';
+import { ProductInterface } from '../../../../structures/interfaces/product.interface';
 
 interface ICartProps {
     type: string;

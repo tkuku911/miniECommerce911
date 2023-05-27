@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import Button from '../../../UI/Button/Button';
 import { useDispatch } from 'react-redux';
-import { cartActions } from "../../../../store/Cart/cart-slice";
-import { ProductInterface } from '../../../../interfaces/product.interface';
+import { cartActions } from '../../../../store/Cart/cart-slice';
+import { ProductInterface } from '../../../../structures/interfaces/product.interface';
 
 interface IAddToCartProps {
     item: ProductInterface | null;

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { ProductInterface } from '../../interfaces/product.interface';
+import { ProductInterface } from '../../structures/interfaces/product.interface';
 
 const PRODUCTS: ProductInterface[] = [
     {

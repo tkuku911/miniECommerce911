@@ -4,7 +4,7 @@ import Image from '../../../../UI/Image/Image';
 import productImage from '../../../../../assets/images/product.jpeg';
 import AddToCart from '../../../../Layout/Cart/AddToCart/AddToCart';
 import CardInfo from '../../../../Layout/Card/CardInfo/CardInfo';
-import { ProductInterface } from '../../../../../interfaces/product.interface';
+import { ProductInterface } from '../../../../../structures/interfaces/product.interface';
 
 interface ICardProps {
     item: ProductInterface;

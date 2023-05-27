@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { ProductInterface } from '../../interfaces/product.interface';
+import { ProductInterface } from '../../structures/interfaces/product.interface';
+import * as localStorage from '../../services/local-storage.service';
+import { LocalStorageNames } from '../../structures/enums/local-storage-names.enum';
 
 interface ICartSlice {
     items: ProductInterface[],
@@ -17,6 +19,12 @@ const cartSlice = createSlice({
     name: 'cart',
     initialState: initialState,
     reducers: {
+        setCartState(state, action) {
+            const cartState = action.payload;
+            state.items = cartState.items;
+            state.totalQuantity = cartState.totalQuantity;
+            state.totalPrice = cartState.totalPrice;
+        },
         addItemToCart(state, action) {
             const newItem = action.payload;
             const existingItem: ProductInterface | undefined = state.items.find((item: ProductInterface) => item.id === newItem.id);
@@ -36,6 +44,7 @@ const cartSlice = createSlice({
                 existingItem.totalItemPrice = existingItem.totalItemPrice + newItem.price;
             }
             state.totalPrice += newItem.price;
+            localStorage.set(LocalStorageNames.Cart, state);
         },
         minusItemQty(state, action) {
             const id = action.payload;
@@ -49,6 +58,7 @@ const cartSlice = createSlice({
                 }
                 state.totalPrice -= existingItem.price;
             }
+            localStorage.set(LocalStorageNames.Cart, state);
         },
         plusItemQty(state, action) {
             const id = action.payload;
@@ -58,6 +68,7 @@ const cartSlice = createSlice({
                 existingItem.qty++;
                 state.totalPrice += existingItem.price;
             }
+            localStorage.set(LocalStorageNames.Cart, state);
         },
         removeItemFromCart(state, action) {
             const id = action.payload;
@@ -67,6 +78,7 @@ const cartSlice = createSlice({
                 state.items = state.items.filter((item: ProductInterface) => item.id !== id);
                 state.totalPrice -= existingItem.price * existingItem.qty;
             }
+            localStorage.set(LocalStorageNames.Cart, state);
         },
     },
 });

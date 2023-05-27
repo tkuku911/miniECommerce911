@@ -2,7 +2,7 @@ import * as Yup from 'yup';
 import { Form, Formik } from 'formik';
 import Input from '../../../UI/Input/Input';
 import CheckoutSubmit from './CheckoutSubmit/CheckoutSubmit';
-import { CheckoutFormValuesInterface } from '../../../../interfaces/form/checkout-form.interface';
+import { CheckoutFormValuesInterface } from '../../../../structures/interfaces/form/checkout-form.interface';
 import MaskedInput from '../../../UI/MaskedInput/MaskedInput';
 
 

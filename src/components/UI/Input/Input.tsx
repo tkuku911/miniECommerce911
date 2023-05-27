@@ -1,6 +1,6 @@
 import { FC, useCallback } from 'react';
 import { useFormikContext } from 'formik';
-import { FormParentInterface } from '../../../interfaces/form/parent-form.interface';
+import { FormParentInterface } from '../../../structures/interfaces/form/parent-form.interface';
 
 export interface IButtonProps {
     type: string;

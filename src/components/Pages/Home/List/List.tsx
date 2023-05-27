@@ -1,6 +1,6 @@
 import Card from './Card/Card';
 import { useSelector } from 'react-redux';
-import { ProductInterface } from '../../../../interfaces/product.interface';
+import { ProductInterface } from '../../../../structures/interfaces/product.interface';
 
 const List = () => {
     const productItems: ProductInterface[] = useSelector((state: any) => state.products.products);

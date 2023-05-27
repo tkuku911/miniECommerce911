@@ -1,7 +1,7 @@
 import Cart from '../../Layout/Cart/Cart/Cart';
 import CheckoutForm from './CheckoutForm/CheckoutForm';
-import { CartLocations } from "../../../enums/cart-locations.enum";
-import TitleBlock from "../../Layout/TitleBlock/TitleBlock";
+import { CartLocations } from '../../../structures/enums/cart-locations.enum';
+import TitleBlock from '../../Layout/TitleBlock/TitleBlock';
 
 const Checkout = () => {
     return(

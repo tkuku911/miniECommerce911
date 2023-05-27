@@ -6,7 +6,7 @@ import Image from '../../UI/Image/Image';
 import AddToCart from '../../Layout/Cart/AddToCart/AddToCart';
 import Banner from '../../Layout/Banner/Banner';
 import CardInfo from '../../Layout/Card/CardInfo/CardInfo';
-import { ProductInterface as IProduct } from '../../../interfaces/product.interface';
+import { ProductInterface as IProduct } from '../../../structures/interfaces/product.interface';
 import TitleBlock from '../../Layout/TitleBlock/TitleBlock';
 
 const Product = () => {

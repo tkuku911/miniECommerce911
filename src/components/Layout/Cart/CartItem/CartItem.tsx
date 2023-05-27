@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import Button from '../../../UI/Button/Button';
 import { cartActions } from '../../../../store/Cart/cart-slice';
 import { uiActions } from '../../../../store/UI/ui-slice';
-import { CartLocations } from '../../../../enums/cart-locations.enum';
+import { CartLocations } from '../../../../structures/enums/cart-locations.enum';
 
 interface Item {
     id: string;

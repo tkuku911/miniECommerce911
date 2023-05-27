@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Button from '../../../../UI/Button/Button';
 import { useFormikContext } from 'formik';
-import { CheckoutFormValuesInterface } from '../../../../../interfaces/form/checkout-form.interface';
+import { CheckoutFormValuesInterface } from '../../../../../structures/interfaces/form/checkout-form.interface';
 
 export interface IButtonProps {
     type: 'button' | 'submit' | 'reset';

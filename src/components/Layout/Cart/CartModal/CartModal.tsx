@@ -5,7 +5,7 @@ import Modal from '../../../UI/Modal/Modal';
 import Cart from '../Cart/Cart';
 import Button from '../../../UI/Button/Button';
 import { uiActions } from '../../../../store/UI/ui-slice';
-import { CartLocations } from '../../../../enums/cart-locations.enum';
+import { CartLocations } from '../../../../structures/enums/cart-locations.enum';
 
 interface ICartModalProps {
     onClose: () => void;
