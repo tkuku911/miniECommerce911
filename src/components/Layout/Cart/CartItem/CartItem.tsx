@@ -8,7 +8,7 @@ import { CartLocations } from '../../../../structures/enums/cart-locations.enum'
 
 interface Item {
     id: string;
-    title: string;
+    name: string;
     description: string;
     price: number;
     qty: number;
@@ -21,7 +21,7 @@ interface ICartItemProps {
 
 const CartItem: FC<ICartItemProps> = ({item, type}) => {
     const dispatch = useDispatch();
-    const {id, title, qty, price} = item;
+    const {id, name, qty, price} = item;
     const link = `/product/${item.id}`;
 
     const toggleCartHandler = () => {
@@ -46,7 +46,7 @@ const CartItem: FC<ICartItemProps> = ({item, type}) => {
         <li className={'flex flex-row justify-start mb-2'}>
             <div className={'w-[40%]'}>
                 <Link to={link} className={'list'} onClick={toggleCartHandler}>
-                    <h3>Name: {title}</h3>
+                    <h3>Name: {name}</h3>
                 </Link>
             </div>
             <div className={'w-[10%]'}>

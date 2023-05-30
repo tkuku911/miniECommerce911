@@ -1,6 +1,6 @@
 import {FC, JSXElementConstructor, ReactElement, useRef} from 'react';
 import ReactDOM from 'react-dom';
-import useClickOutside from '../../../hooks/use-click-outside';
+import useClickOutside from '../../../hooks/common/use-click-outside';
 
 export interface IBackdropProps {
     onClose: () => void;

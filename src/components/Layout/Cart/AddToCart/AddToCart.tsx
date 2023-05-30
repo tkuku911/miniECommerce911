@@ -15,9 +15,9 @@ const AddToCart: FC<IAddToCartProps> = ({item}) => {
         event.preventDefault();
         const addToCart = {
             id: item?.id,
-            title: item?.title,
+            title: item?.name,
             qty: 1,
-            price: item?.price
+            price: Number(item?.price)
         }
         dispatch(cartActions.addItemToCart(addToCart));
     };

@@ -10,7 +10,7 @@ interface ICardInfoProps {
 const CardInfo: FC<ICardInfoProps> = ({displayDescription, displayTitle, item}) => {
 
     const titleBlock = (
-        <>{displayTitle ? (<p className={'mb-3'}>{item?.title}</p>) : ''}</>
+        <>{displayTitle ? (<p className={'mb-3'}>{item?.name}</p>) : ''}</>
     );
 
     const descriptionBlock = (
