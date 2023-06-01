@@ -1,9 +1,10 @@
 import Logo from './Logo/Logo';
 import CartButton from './CartButton/CartButton';
+import './Header.scss';
 
 const Header = () => {
     return(
-        <header className={'flex py-4 px-32 bg-white'}>
+        <header>
             <Logo />
             <CartButton />
         </header>

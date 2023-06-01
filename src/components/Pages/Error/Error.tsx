@@ -1,11 +1,12 @@
 import Header from '../../Layout/Header/Header';
+import './Error.scss';
 
 const Error = () => {
     return(
-        <>
+        <div className="error-container">
             <Header />
-            <h1 className={'text-center mt-5'}>404 Not Found</h1>
-        </>
+            <h1>404 Not Found</h1>
+        </div>
     )
 }
 

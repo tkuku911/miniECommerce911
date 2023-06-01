@@ -2,6 +2,7 @@ import { FC, useCallback } from 'react';
 import { IMaskInput } from 'react-imask';
 import { useFormikContext } from 'formik';
 import { FormParentInterface } from '../../../structures/interfaces/form/parent-form.interface';
+import './MaskedInput.scss';
 
 export interface IButtonProps {
     type: string;
@@ -26,7 +27,7 @@ const MaskedInput: FC<IButtonProps> = ({type, mask, classes, name, label, contex
     );
 
     return(
-        <div className={'mb-5'}>
+        <div className="masked-input-container">
             <label>{label}</label>
             <IMaskInput
                 type={type}
@@ -37,7 +38,7 @@ const MaskedInput: FC<IButtonProps> = ({type, mask, classes, name, label, contex
                 onChange={handleChange}
                 onBlur={handleBlur}
             />
-            <div className="text-rose-500 text-sm">{showErrors ? error : ''}</div>
+            <div className="masked-input-container-error-message">{showErrors ? error : ''}</div>
         </div>
     )
 }

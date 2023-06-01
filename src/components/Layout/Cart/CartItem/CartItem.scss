@@ -1,0 +1,19 @@
+.cart-item {
+  @apply flex flex-row justify-start mb-2;
+
+  &-name {
+    @apply w-[40%];
+    &-link {
+     // @apply list;
+    }
+  }
+  &-qty {
+    @apply w-[10%];
+  }
+  &-price {
+    @apply w-[15%];
+  }
+  &-actions {
+    @apply w-[35%];
+  }
+}

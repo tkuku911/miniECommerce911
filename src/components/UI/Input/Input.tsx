@@ -1,6 +1,7 @@
 import { FC, useCallback } from 'react';
 import { useFormikContext } from 'formik';
 import { FormParentInterface } from '../../../structures/interfaces/form/parent-form.interface';
+import './Input.scss';
 
 export interface IButtonProps {
     type: string;
@@ -24,7 +25,7 @@ const Input: FC<IButtonProps> = ({type, classes, name, label, context}) => {
     );
 
     return(
-        <div className={'mb-5'}>
+        <div className="input-container">
             <label>{label}</label>
             <input
                    type={type}
@@ -34,7 +35,7 @@ const Input: FC<IButtonProps> = ({type, classes, name, label, context}) => {
                    onChange={handleChange}
                    onBlur={handleBlur}
             />
-            <div className="text-rose-500 text-sm">{showErrors ? error : ''}</div>
+            <div className="error-message">{showErrors ? error : ''}</div>
         </div>
     )
 }

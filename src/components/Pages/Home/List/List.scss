@@ -1,0 +1,7 @@
+main {
+  @apply mt-8 mb-8;
+
+  ul {
+    @apply grid grid-rows-2 grid-flow-col gap-16 px-64;
+  }
+}

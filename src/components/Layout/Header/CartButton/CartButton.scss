@@ -1,0 +1,9 @@
+.cart-button {
+  @apply flex flex-row cursor-pointer;
+  &-icon {
+    @apply text-purple-700;
+  }
+  &-qty {
+    @apply text-gray-500 text-xs ml-1;
+  }
+}

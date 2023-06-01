@@ -4,6 +4,7 @@ import Input from '../../../UI/Input/Input';
 import CheckoutSubmit from './CheckoutSubmit/CheckoutSubmit';
 import { CheckoutFormValuesInterface } from '../../../../structures/interfaces/form/checkout-form.interface';
 import MaskedInput from '../../../UI/MaskedInput/MaskedInput';
+import './CheckoutForm.scss';
 
 
 const CheckoutForm = () => {
@@ -33,14 +34,14 @@ const CheckoutForm = () => {
     });
 
     return(
-        <div className={'mb-10'}>
-            <h3 className={'text-left font-bold text-2xl mb-6'}>Checkout Form</h3>
+        <div className="checkout-form-container">
+            <h3>Checkout Form</h3>
             <Formik
                 initialValues={checkoutFormInitialValues}
                 onSubmit={onSubmit}
                 validationSchema={checkoutFormSchema}
             >
-                <Form className={'flex flex-col'}>
+                <Form className="checkout-form-container-form">
                     <Input type={'text'} classes={'border-2 border-slate-300 rounded-lg w-full h-10'} name={'firstName'} label={'Firstname'} context={'CheckoutFormValues'} />
                     <Input type={'text'} classes={'border-2 border-slate-300 rounded-lg w-full h-10'} name={'lastName'} label={'Lastname'} context={'CheckoutFormValues'} />
                     <Input type={'email'} classes={'border-2 border-slate-300 rounded-lg w-full h-10'} name={'email'} label={'Email'} context={'CheckoutFormValues'} />

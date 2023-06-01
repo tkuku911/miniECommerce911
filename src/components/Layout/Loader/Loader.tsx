@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import './Loader.scss';
 
 interface LoaderProps {
     className?: string;

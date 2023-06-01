@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import './TitleBlock.scss';
 
 interface ITitleBlockProps {
     title?: string;
@@ -6,8 +7,8 @@ interface ITitleBlockProps {
 
 const TitleBlock: FC<ITitleBlockProps> = ({title}) => {
     return(
-        <div className={'bg-purple-900 p-24 mb-10'}>
-            <h1 className={'text-center text-5xl font-black text-white'}>{title}</h1>
+        <div className="title-block">
+            <h1>{title}</h1>
         </div>
     )
 }

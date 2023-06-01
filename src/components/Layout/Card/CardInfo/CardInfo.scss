@@ -1,0 +1,13 @@
+.card-info {
+  @apply flex flex-col;
+
+  &-price {
+    @apply text-gray-600 mb-3 font-semibold;
+  }
+  &-title {
+    @apply mb-3;
+  }
+  &-desc {
+    @apply mb-3;
+  }
+}

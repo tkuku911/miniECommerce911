@@ -1,0 +1,18 @@
+.cart {
+  @apply mb-12;
+
+  h3 {
+    @apply text-left font-bold text-2xl mb-6;
+  }
+
+  &-quantity {
+    @apply h-5/6;
+
+    &-empty {
+      @apply mb-4;
+    }
+    &-value {
+      @apply mt-6 font-bold;
+    }
+  }
+}

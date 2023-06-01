@@ -5,6 +5,7 @@ import productImage from '../../../../../assets/images/product.jpeg';
 import AddToCart from '../../../../Layout/Cart/AddToCart/AddToCart';
 import CardInfo from '../../../../Layout/Card/CardInfo/CardInfo';
 import { ProductInterface } from '../../../../../structures/interfaces/product.interface';
+import './Card.scss';
 
 interface ICardProps {
     item: ProductInterface;
@@ -14,10 +15,10 @@ const Card: FC<ICardProps> = ({item}) => {
     const link = `/product/${item.id}`;
 
     return(
-        <div className={'border-2 rounded-lg border-purple-400 h-76 m-auto p-2'}>
-            <Link to={link} className={'list'}>
-                <Image src={productImage} alt={'Card image'} classes={'h-50'} />
-                <div className={'flex justify-around'}>
+        <div className="card">
+            <Link to={link} className="card-link">
+                <Image src={productImage} alt={'Card image'} classes="card-image" />
+                <div className="card-bottom">
                     <CardInfo item={item} displayTitle={true} displayDescription={false} />
                     <AddToCart
                         item={item}

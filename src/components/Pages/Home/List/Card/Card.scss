@@ -1,0 +1,13 @@
+.card {
+  @apply border-2 rounded-lg border-purple-400 h-72 m-auto p-2;
+
+  &-link {
+    //@apply list;
+  }
+  &-image {
+   @apply h-52;
+  }
+  &-bottom {
+    @apply flex justify-around;
+  }
+}

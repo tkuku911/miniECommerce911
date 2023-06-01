@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 import * as localStorage from '../../services/local-storage.service';
 import { cartActions } from '../../store/Cart/cart-slice';
 import { LocalStorageNames } from '../../structures/enums/local-storage-names.enum';
+import './BaseTemplate.scss';
 
 function BaseTemplate() {
     const dispatch = useDispatch();
@@ -36,7 +37,7 @@ function BaseTemplate() {
 
     return (
         <>
-             <div className={'min-h-screen'}>
+             <div className="base-template">
                  {cartIsVisible && <CartModal onClose={toggleCartHandler} />}
                  <Header />
                  <Outlet />

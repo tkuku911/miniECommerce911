@@ -1,6 +1,7 @@
 import {FC, JSXElementConstructor, ReactElement, useRef} from 'react';
 import ReactDOM from 'react-dom';
 import useClickOutside from '../../../hooks/common/use-click-outside';
+import './Modal.scss';
 
 export interface IBackdropProps {
     onClose: () => void;
@@ -17,15 +18,15 @@ export interface IModalProps {
 };
 
 const Backdrop: FC<IBackdropProps> = ({onClose}) => {
-    return <div className='fixed top-0 left-0 w-full h-screen z-20 bg-slate-700 opacity-60' onClick={onClose}/>;
+    return <div className="backdrop" onClick={onClose}/>;
 };
 
 const ModalOverlay: FC<IModalOverlayProps> = ({children, onClose}) => {
     const modalContainerRef = useRef<HTMLDivElement>(null);
     useClickOutside(modalContainerRef, onClose);
     return (
-        <div className='fixed top-1/4 left-1/3 w-2/5 min-h-80 z-30 p-5 rounded bg-white' ref={modalContainerRef}>
-            <div className={'h-full'}>{children}</div>
+        <div className="modal-overlay" ref={modalContainerRef}>
+            <div className="modal-overlay-content">{children}</div>
         </div>
     );
 };

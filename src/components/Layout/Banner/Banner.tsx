@@ -1,9 +1,10 @@
 import imageHills from '../../../assets/images/hills.jpg';
+import './Banner.scss';
 
 const Banner = () => {
     return(
         <aside>
-            <img src={imageHills} alt={'Hills'} className={'w-screen'} />
+            <img src={imageHills} alt={'Hills'} />
         </aside>
     )
 }

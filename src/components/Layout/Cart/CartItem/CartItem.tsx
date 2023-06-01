@@ -5,6 +5,7 @@ import Button from '../../../UI/Button/Button';
 import { cartActions } from '../../../../store/Cart/cart-slice';
 import { uiActions } from '../../../../store/UI/ui-slice';
 import { CartLocations } from '../../../../structures/enums/cart-locations.enum';
+import './CartItem.scss';
 
 interface Item {
     id: string;
@@ -43,19 +44,19 @@ const CartItem: FC<ICartItemProps> = ({item, type}) => {
     };
 
     return(
-        <li className={'flex flex-row justify-start mb-2'}>
-            <div className={'w-[40%]'}>
-                <Link to={link} className={'list'} onClick={toggleCartHandler}>
+        <li className="cart-item">
+            <div className="cart-item-name">
+                <Link to={link} className="cart-item-name-link" onClick={toggleCartHandler}>
                     <h3>Name: {name}</h3>
                 </Link>
             </div>
-            <div className={'w-[10%]'}>
+            <div className="cart-item-qty">
                 <p>QTY: {qty}</p>
             </div>
-            <div className={'w-[15%]'}>
+            <div className="cart-item-price">
                 <p>Price: {price} $</p>
             </div>
-            <div className={'w-[35%]'}>
+            <div className="cart-item-actions">
                 <Button
                     type={'button'}
                     classes={'border-2 border-indigo-600 w-8 h-7 mr-4' + (qty < 2 ? ' disabled:opacity-25' : '')}

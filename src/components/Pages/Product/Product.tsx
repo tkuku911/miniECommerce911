@@ -7,6 +7,7 @@ import TitleBlock from '../../Layout/TitleBlock/TitleBlock';
 import { useProduct } from '../../../hooks/products/use-product';
 import { Loader } from '../../Layout/Loader/Loader';
 import { NotFoundImageObject } from '../../../structures/objects/not-found-image.object';
+import './Product.scss';
 
 
 const Product = () => {
@@ -17,17 +18,17 @@ const Product = () => {
 
     const getImage = (
         <>{data?.images && data?.images.length
-            ? (<Image src={data?.images[0].src} alt={data?.images[0].alt} classes={'h-96'} />)
-            : <Image src={NotFoundImageObject.src} alt={NotFoundImageObject.alt} classes={'h-96'} />}</>
+            ? (<Image src={data?.images[0].src} alt={data?.images[0].alt} classes="product-image" />)
+            : <Image src={NotFoundImageObject.src} alt={NotFoundImageObject.alt} classes="product-image" />}</>
     );
 
     return(
         <>
             {isFetching && <Loader className="component-loader" />}
             <TitleBlock title={data?.name} />
-            <div className={'mt-10 mb-10 flex px-64'}>
+            <div className="product">
                 {getImage}
-                <div className={'ml-60'}>
+                <div className="product-bottom">
                     <CardInfo item={data} displayTitle={false} displayDescription={true} />
                     <AddToCart item={data} />
                 </div>

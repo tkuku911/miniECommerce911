@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
+import './Logo.scss';
 
 const Logo = () => {
     return(
-        <div className={'flex-auto w-64'}>
+        <div className="logo">
             <Link to={'/'}>
-                <h1 className={'text-2xl text-center text-black'}>Iphone</h1>
+                <h1>Iphone</h1>
             </Link>
         </div>
     )
